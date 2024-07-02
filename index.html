@@ -1,0 +1,383 @@
+<html>
+
+<head>
+    <title>Game</title>
+    <script src="p5.js"></script>
+    <style>
+        body {
+            text-align: center;
+            margin:0px;
+            padding:0px;
+        }
+    </style>
+    <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <script src="js/create.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/create-objects.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/dialog.js"></script>
+
+
+    <div id="dialogs" style="display:none;">
+        <div class="Intro">
+            <div class="dialog_1">
+                <div class="reply">The year is 2024 and you just arrived by boat to the small island of Fjölsvinn.</div>
+                <div class="answer dialog_close">Start</div>
+                <div class="answer dialog_1_1">Who i'm?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_1">
+                <div class="reply">You are Amanda. A journalist that is doing a article about the "Followers of the old Yore", its a unique bunch of Cultist that lives on this island.</div>
+                <div class="answer dialog_close">Start</div>
+                <div class="answer dialog_1_2">How do i get started?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_2">
+                <div class="reply">Walk around using Arrow keys and press E to interact.</div>
+                <div class="answer dialog_close">Start</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+        </div>
+
+        <div class="Uller">
+            <div class="dialog_1">
+                <div class="reply">Good morning!</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_1">Good morning, who are you?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_1">
+                <div class="reply">Im Uller, i saw you arrive so i decided to come out and greet you. You are here for the interview right?</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_2">Yes exactly! I was going to meet Ottar, do you know where he is?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_2">
+                <div class="reply">Hmm, no but i'm sure that Ulf is better for that, he is the one who started our community here.</div>
+                <div class="answer dialog_close">Okay, thank you! See you later!</div>
+                <div class="answer dialog_1_3">Thank you, can you tell me more about Ulf?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_3">
+                <div class="reply">I heard some conspiracty teorist online says that Ulf is a leader of a cult but i wouldn't say so, he is pretty cool really.</div>
+                <div class="answer dialog_close">Okay, thank you! See you later</div>
+                <div class="answer dialog_1_4">What do you guys belive in here on the island?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_4">
+                <div class="reply">It sounds a bit silly but we kind of belive old norse gods and stuff, its sounds a bit cringe to some but they dont know the depths of our beliefs.</div>
+                <div class="answer dialog_close">Thanks for the information, See you</div>
+                <div class="answer dialog_1_5">I dont think that sounds silly, you can belive in whatever you want.</div>
+                <div class="answer dialog_1_6 dialog_confrontation">Okay... That's sounds pretty stupid to be honest</div>
+            </div>
+            
+            <div class="dialog_1_5">
+                <div class="reply">Thanks! Feel free to explore</div>
+                <div class="answer dialog_close">Thanks, See you. I will countinue to look for Ottar.</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_6">
+                <div class="reply">Hey! Don't say that! I think you should treat us with some respect.</div>
+                <div class="answer dialog_1_7">I'm sorry.</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+
+            
+            <div class="dialog_1_7">
+                <div class="reply">You are just a guest here, and we are always friendly towards those who visits us. Feel free to explore but dont call us stupid.</div>
+                <div class="answer dialog_close">Thank you. I will countinue to look for Ottar.</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+        </div>
+
+        <div class="Ulf">
+            <div class="dialog_1">
+                <div class="reply">You had a question for me?</div>
+                <div class="answer dialog_close">Not right now.</div>
+                <div class="answer dialog_1_1">Where is Ottar</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_1">
+                <div class="reply">What are you? Some kind of police?</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_2">No. I'm a journalist.</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_2">
+                <div class="reply">Okay so what, here to write lies about me you immoral bastard?</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_3">What? No! I was just here to talk to Ottar becuse i was curious about how you guys live out here.</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_3">
+                <div class="reply">You see this oak? It was sacred to us and now its dying.</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_4">Oh, i didn't realise. I'm sorry to hear that.</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_4">
+                <div class="reply">Ottar killed this tree and thats why he had to die.</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_5">Oh my god!</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_5">
+                <div class="reply">Yes. Ottar was bringing over all type of smartphones and batteries, and the 5G killed the tree.</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_6">What? That doesn't even make sense?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_6">
+                <div class="reply">Ottar seemed to want to have a higher living standard, but he thinks a living standard that is even greater than the kings of the past is something he deserves.</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_7">I'm sorry. But i think you are wrong.</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_7">
+                <div class="reply">Do you really think your higher living standard comes with no cost? You can see the proof right here. The sacred oak is dead!</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_8">I dont think the tree is dying just becuse Ottar had some modern technology on the island. They are more resiliant than that!</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_8">
+                <div class="reply">You are obviously naive. But i shouldn't say anything more about Ottar. Its a deeply rooted tradition is to not talk ill about the dead.</div>
+                <div class="answer"></div>
+                <div class="answer dialog_1_9">I'm sorry but i'm free to go? I don't want to be hurt.</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_9">
+                <div class="reply">Yes go ahead and leave. We have made sure that Ottar will never make any more harm. He is in a place where time surrenders and nothing can be reborn</div>
+                <div class="answer dialog_close">Bye.</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+            
+        </div>
+
+        <div class="Bjurn">
+            <div class="dialog_1">
+                <div class="reply">Bjurn just looks at you</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_1">Greetings, is this your house?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_1">
+                <div class="reply">In fact its our house, but i built most of it. Using this guide you see. *He quickly shows a worn thin book about viking construction with a colorful image on the frontside*</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_2">Oh, well great job! Look sturdy</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_2">
+                <div class="reply">Last year the entire house started to sag down into the ground but we where able to lift the entire house frame and it held together. Its was pretty great to see! We added some more rocks underneath it to keep it stable.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_3">I didn't know you could lift a entire house without it collapsing!</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_3">
+                <div class="reply">Well its just stacked pieces of wood so its really not that amazing when you think about it.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_4">Haha i guess so. By the way, do you know Ottar? I was supposed to meet him for a interview</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_4">
+                <div class="reply">I think he is somewhere around here, not sure.</div>
+                <div class="answer dialog_close">Okay thanks i will look for him. Goodbye</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+        </div>
+
+
+        <div class="Jall">
+            <div class="dialog_1">
+                <div class="reply">Hello</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_1">Hello, what are you growing?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_1">
+                <div class="reply">Hey, well some carrots, potatos, stuff like that.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_2">Nice! Do you know what happened to Ottar, i was supposed to meet him on the island?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_2">
+                <div class="reply">I'm not sure, but in my opinion i think he is dead</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_3">Really, dead!? He was alive just a week ago when he contacted me!</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_3">
+                <div class="reply">Yeah i'm sorry to say it. Ottar was a bit more relaxed when it comes to the rules of this community</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_4">Like what?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_4">
+                <div class="reply">Well first of all, he had a phone to contact you online right?</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_5">Okay. That's not uncommon, most people have phones</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_5">
+                <div class="reply">Yeah i know that, but we do not use them here.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_6">Why?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_6">
+                <div class="reply">We don't support modern society more than we absolutly need to.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_7">Why?</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_7">
+                <div class="reply">You might not understand it now, but trust me when the oil run out or a solar flare hits you will all come to us for help.</div>
+                <div class="answer dialog_close">We will see what happens.</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+
+        </div>
+
+        <div class="Marie">
+            <div class="dialog_1">
+                <div class="reply">Marie is sitting pathings some holes in clothes.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_1">Hello are you repairing some clothes?</div>
+                <div class="answer"></div>
+            </div>
+            <div class="dialog_1_1">
+                <div class="reply">Yes it's tedious work but the effort will be worth it.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_2">Okay thats great to see! I do some sewing myself but with a sewing machine.</div>
+                <div class="answer"></div>
+            </div>
+            <div class="dialog_1_2">
+                <div class="reply">People are obsessed with buying the latest gadgets and trends, thinking it brings them happiness. But can you really say you are happy when you tap away on that machine or is hard work more satisfying in the long run?</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_3">I understand your point but it would save you a lot of time?</div>
+                <div class="answer"></div>
+            </div>
+            <div class="dialog_1_3">
+                <div class="reply">Well time is one thing we have plenty off here in Fjölsvinn.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_4">How do you have so much free time if everything has to be made by hand?</div>
+                <div class="answer"></div>
+            </div>
+            <div class="dialog_1_4">
+                <div class="reply">We have a lot of stuff to do during the days especially now when winter is on its way. But as nightfall comes we sit down together and having something to do with your hands just appreciated.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_5">I understand. By the way, do you know where Ottar is? I'm meeting him for a interview.</div>
+                <div class="answer"></div>
+            </div>
+            <div class="dialog_1_5">
+                <div class="reply">Sorry... He needed to leave our community.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_6">Okay so he is not here?</div>
+                <div class="answer"></div>
+            </div>
+            <div class="dialog_1_6">
+                <div class="reply">No.</div>
+                <div class="answer dialog_close">Hmm okay... I will keep looking around in case he is around here anyway</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+        </div>
+
+        <div class="Marie_2">
+            <div class="dialog_1">
+                <div class="reply">Oh, you are back</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_1_1">I have been all over the island tell me what happened to Ottar!</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_1">
+                <div class="reply">Sorry child but i probably shouldn't talk about it.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer dialog_confrontation">Let me talk to the person on the other side of this fence [confront]</div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_won">
+                <div class="reply">I will let you in</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+
+            <div class="dialog_1_lost">
+                <div class="reply">Not now.</div>
+                <div class="answer dialog_close">Bye</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+        </div>
+
+        <div class="Dead-Ottar">
+            <div class="dialog_1">
+                <div class="reply">You see Ottar laying in the marshes completly covered in water. He is dead with part of his jacket sticking out from the water</div>
+                <div class="answer dialog_close">I need to get out of here quick</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+
+        </div>
+
+        <div class="Frigg">
+            <div class="dialog_1">
+                <div class="reply">My father told me not to speak to strangers</div>
+                <div class="answer dialog_close">Okay bye</div>
+                <div class="answer"></div>
+                <div class="answer"></div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+
+
+
+</html>
