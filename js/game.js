@@ -222,12 +222,12 @@ function draw() {
         if (npc_array[i].map == map) {
             stroke(50);
             fill(color(255, 0, 0));
-            if(npc_array[i].name == "Dead-Ottar"){
+            if (npc_array[i].name == "Dead-Ottar") {
                 image(img_ottar, npc_array[i].position.x - 7.25, npc_array[i].position.y - 12.25, 24.5, 14.5);
             } else {
                 image(img_npc, npc_array[i].position.x - 7.25, npc_array[i].position.y - 12.25, 14.5, 24.5);
             }
-            
+
             //ellipse(npc_array[i].position.x, npc_array[i].position.y, player[0].radius * 2, player[0].radius * 2);
             if (DrawNpcDialogIfClose(i)) {
                 dialog_available = true;
@@ -289,6 +289,12 @@ function draw() {
         fadeTransparancy -= 1;
     }
 
+    if (fadeTransparancy > 300) {
+        textAlign(CENTER, CENTER);
+        fill(color(255, 255, 255));
+        textSize(40);
+        text("Thank you for playing!", 0, (resolution/2), resolution);
+    }
 
     // Cursor
     stroke(50);

@@ -16,7 +16,7 @@ function collisionCheck(obstacle) {
 function mousePressed() {
     cursor[0].cursor_down = true;
 
-    if(audioPlaying == false ){
+    if (audioPlaying == false) {
         audioPlaying = true;
         audioPlayer.play();
         audioPlayer.volume(0.2)
@@ -94,7 +94,7 @@ function playerMovement() {
         player[0].position.y = 245;
     }
     if (player[0].position.x < 0) {
-        if(map == 4){
+        if (map == 4) {
             map = 5;
             player[0].position.x = 699;
             player[0].position.y = 245;

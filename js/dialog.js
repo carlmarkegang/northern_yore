@@ -53,7 +53,7 @@ function DrawDialogBox(active, reply, answer1, answer2, answer3) {
         rect(50, 50, resolution - 100, resolution - 100);
 
         // Main text
-        
+
         textAlign(CENTER, TOP);
         fill(color(255, 255, 255, 255));
 
@@ -104,12 +104,12 @@ function DrawDialogBox(active, reply, answer1, answer2, answer3) {
             text(answer1, 100, resolution - 200, resolution - 200, 100);
         }
 
-        if(dialogbox_talking_to == "Ulf" && dialogbox_reply == "What are you? Some kind of police?"){
+        if (dialogbox_talking_to == "Ulf" && dialogbox_reply == "What are you? Some kind of police?") {
             murderlocationRevealed = true;
         }
 
-        
-        if(dialogbox_talking_to == "Dead-Ottar"){
+
+        if (dialogbox_talking_to == "Dead-Ottar") {
             player[0].speed = 2;
         }
     }

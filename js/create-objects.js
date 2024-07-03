@@ -222,7 +222,7 @@ function createObjects(map) {
     }
 
     if (map == 5) {
-        npc_array.push(new create_npc(map, "Bjurn_2", 500, 200, 0, 0, ["Press 'E' to confront"]));
+        npc_array.push(new create_npc(map, "Bjurn_2", 500, 200, 0, 0, ["Press 'E' to talk"]));
         npc_array.push(new create_npc(map, "Marie_2", 530, 440, 0, 0, ["Press 'E' to confront"]));
         npc_array.push(new create_npc(map, "Ulf", 677, 278, 0, 0, ["Press 'E' to talk"]));
         npc_array.push(new create_npc(map, "Frigg", 350, 200, 0, 0, ["Press 'E' to confront"]));
